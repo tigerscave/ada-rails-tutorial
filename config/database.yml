@@ -11,7 +11,9 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: <%= ENV.fetch("DATABASE_NAME") { "test" } %>
+  username: <%= ENV.fetch("DB_USER_NAME") { "test" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "test" } %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
