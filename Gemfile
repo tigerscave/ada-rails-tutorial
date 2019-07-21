@@ -8,6 +8,9 @@ gem 'rails', '~> 5.2.0'
 
 gem 'bootstrap-sass'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
