@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates(:name, presence: true)
   validates :email, presence: true, uniqueness: true
   has_secure_password
+  validates :password, presence: true, allow_nil: true
 
   def User.digest(string)
     cost =
