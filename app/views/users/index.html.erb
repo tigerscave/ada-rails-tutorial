@@ -8,6 +8,9 @@
     <li>
       <span>name: <%= link_to user.name, user %></span>
       <span>, email: <%= user.email %></span>
+      <% if !current_user?(user) %>
+        | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+      <% end %>
     </li>
   <% end %>
 </ul>
