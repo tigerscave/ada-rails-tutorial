@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     if !@user.activated
       redirect_to root_url
     end
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 2)
   end
 
   def create
