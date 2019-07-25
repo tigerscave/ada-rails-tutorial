@@ -17,3 +17,7 @@
 ## Local mail debug
 
 - require `mailcatcher`
+
+## For file resize
+
+- require `ImageMagick`
