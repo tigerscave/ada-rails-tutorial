@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.where(activated: true).paginate(page: params[:page], per_page: 2)
+    @users = User.where(activated: true).paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       flash[:danger] = "This user is not activated yet."
       redirect_to root_url
     end
-    @microposts = @user.microposts.paginate(page: params[:page], per_page: 2)
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 5)
   end
 
   def create
