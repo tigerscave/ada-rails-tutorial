@@ -13,6 +13,7 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'cloudinary'
+gem 'kaminari'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'

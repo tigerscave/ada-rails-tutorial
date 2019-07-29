@@ -2,6 +2,11 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
 
+  def index
+    @microposts = Micropost.page(params[:page]).per(2).order('created_at DESC')
+    render 'index', :formats => [:json], :handlers => [:jbuilder]
+  end
+
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
